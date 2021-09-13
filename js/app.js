@@ -11,7 +11,7 @@ const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
-    let price=product.price;
+    const price=product.price;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
@@ -78,5 +78,5 @@ const updateTaxAndCharge = () => {
 //grandTotal update function
 const updateTotal = () => {
    const grandTotal =getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal;
+  document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
