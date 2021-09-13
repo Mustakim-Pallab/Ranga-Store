@@ -12,6 +12,9 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product.image;
     const price=product.price;
+    const rating=product.rating;
+    const rate=rating.rate;
+    const numberOfPeopleRate=rating.count;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
@@ -19,7 +22,10 @@ const showProducts = (products) => {
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
+      <p>Category: ${product.category} <br>
+      ${numberOfPeopleRate} People rated this <br>
+      Avg Rating:${rate}
+      </p>
       <h2>Price: $ ${price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
