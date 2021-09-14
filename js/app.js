@@ -3,6 +3,8 @@ const loadProducts = () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
+    document.getElementById("searchbox").value='';
+    
 };
 loadProducts();
 
@@ -21,16 +23,18 @@ const showProducts = (products) => {
       <div>
     <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h5 >${product.title}</h3>
       <p>Category: ${product.category} <br>
       ${numberOfPeopleRate} People rated this <br>
       Avg Rating:${rate}
       </p>
       <h2>Price: $ ${price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
+    
+    
   }
 };
 let count = 0;
@@ -86,3 +90,4 @@ const updateTotal = () => {
    const grandTotal =getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+
