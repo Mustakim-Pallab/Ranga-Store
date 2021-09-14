@@ -17,6 +17,10 @@ const showProducts = (products) => {
     const rating=product.rating;
     const rate=rating.rate;
     const numberOfPeopleRate=rating.count;
+    const totalRating=5;
+    const percentageRating=((rate/totalRating)*100);
+    const roundRatingPercentage=`${Math.round(percentageRating/10)*10}%`;
+    
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
@@ -24,16 +28,27 @@ const showProducts = (products) => {
     <img class="product-image" src=${image}></img>
       </div>
       <h5 >${product.title}</h3>
-      <p>Category: ${product.category} <br>
-      ${numberOfPeopleRate} People rated this <br>
-      Avg Rating:${rate}
-      </p>
+      <p>Category: ${product.category} 
+      
+        <div class="star-rating">
+          <div class="star-rating-inner" id="${product.id}">
+
+
+          </div>
+        </div>
+        <span>
+        (${rate})
+        
+        </span>
+        <h5> <span class="people-count"> ${numberOfPeopleRate} </span> People rated this </h5><br>
+      
+
       <h2>Price: $ ${price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
-    
+    document.getElementById(`${product.id}`).style.width=roundRatingPercentage;
     
   }
 };
@@ -90,4 +105,5 @@ const updateTotal = () => {
    const grandTotal =getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+
 

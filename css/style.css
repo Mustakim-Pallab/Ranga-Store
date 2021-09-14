@@ -60,7 +60,7 @@ body {
   margin:25px;
   border-radius:10px ;
   border:2px solid rgb(227, 240, 240);
-  height: 450px;
+  height: 480px;
   width:300px;
 
 }
@@ -75,6 +75,35 @@ body {
 .product-image {
   width: 150px;
   height: 150px;
+  
+}
+.star-rating{
+  position: relative;
+  display:inline-block;
+}
+.star-rating-inner{
+  position: absolute;
+  top:0;
+  left:0;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+}
+
+.star-rating::before {
+
+  content:"\f005 \f005 \f005 \f005 \f005";
+  font-family:"Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.star-rating-inner::before {
+
+  content:"\f005 \f005 \f005 \f005 \f005";
+  font-family:"Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8760b;
   
 }
 
