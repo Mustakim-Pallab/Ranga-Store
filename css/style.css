@@ -1,7 +1,9 @@
+/* google font  */
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=MedievalSharp&display=swap');
 /* bangla font  */
 @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+
 
 body {
   overflow-x: hidden;
@@ -9,17 +11,17 @@ body {
   
 }
 
-
+/* headline and motto */
 .container span{
   color:rgb(41, 65, 56);
-  /* font-family: 'MedievalSharp', cursive; */
-  /* font-family: 'Lobster Two', cursive; */
   font-family: 'Galada', cursive;
 }
 .container h1{
   font-family: 'Lobster Two', cursive;
   color:rgb(98, 161, 98);
 }
+
+/* .search-box */
 .search-field {
   border: none;
   border-radius: 50px;
@@ -43,10 +45,11 @@ body {
   border-radius: 25px;
   margin-left: 20px;
 }
+
+/* show product  */
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* border: 1px solid black; */
   text-align: center;
   width: 100%;
   margin: 20px;
@@ -72,11 +75,14 @@ body {
   border: 1px solid cyan;
 }
 
+/* images of product */
 .product-image {
   width: 150px;
   height: 150px;
   
 }
+
+/* rating  */
 .star-rating{
   position: relative;
   display:inline-block;
@@ -106,7 +112,12 @@ body {
   color: #f8760b;
   
 }
+/* how many people rate the item */
+.people-count{
+  color:rgb(219, 0, 0);
+}
 
+/* voucher */
 .cart {
   width: 350px;
   /* border: 1px solid green; */
@@ -119,14 +130,15 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
   .cart {
-    width: 300px;
-    /* border: 1px solid green; */
+    width: 3000px;
+    
     padding: 10px;
     box-shadow: 10px 10px 20px gray;
     border-radius: 5px;
@@ -142,4 +154,5 @@ body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+
 }

@@ -1,3 +1,4 @@
+// calling API 
 const loadProducts = () => {
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
@@ -19,7 +20,7 @@ const showProducts = (products) => {
     const numberOfPeopleRate=rating.count;
     const totalRating=5;
     const percentageRating=((rate/totalRating)*100);
-    const roundRatingPercentage=`${Math.round(percentageRating/10)*10}%`;
+    const roundRatingPercentage=`${Math.round(percentageRating/10)*10}%`; //rating percentage count
     
     const div = document.createElement("div");
     div.classList.add("product");
@@ -40,7 +41,7 @@ const showProducts = (products) => {
         (${rate})
         
         </span>
-        <h5> <span class="people-count"> ${numberOfPeopleRate} </span> People rated this </h5><br>
+        <h5> <span class="people-count"> ${numberOfPeopleRate} People </span> rated this item </h5><br>
       
 
       <h2>Price: $ ${price}</h2>
@@ -52,6 +53,8 @@ const showProducts = (products) => {
     
   }
 };
+
+// product count 
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
